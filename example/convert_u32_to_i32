@@ -1,0 +1,13 @@
+fn main() {
+    let r = convert_from_u32_nightly(32);
+
+    println!("Returned {}.", r);
+}
+
+fn convert_from_u32_nightly(input: u32) -> i32 {
+    if let Ok(response) = i32::try_from(input) {
+        return response;
+    } else {
+        return 0;
+    };
+}
