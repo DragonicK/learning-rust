@@ -1,0 +1,13 @@
+fn main() {
+    let mut var = String::from("");
+
+    println!("Before: {}", var);
+
+    execute(&mut var);
+
+    println!("After: {}", var);
+}
+
+fn execute(variable: &mut String) {
+    *variable = String::from("DragonicK");
+}

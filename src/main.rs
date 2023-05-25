@@ -10,13 +10,19 @@ fn main() {
         String::from("juliosperandio@hotmail.com"),
     );
 
-    let locked = LockedType::Locked;
+    let mut var = String::from("");
 
-    let r = convert_from_u32_nightly(32);
+    println!("Before: {}", var);
 
-    println!("Returned {}.", r);
+    execute(&mut var);
+
+    println!("After: {}", var);
 
     write_user(user);
+}
+
+fn execute(variable: &mut String) {
+    *variable = String::from("DragonicK");
 }
 
 fn build_user(username: String, email: String) -> User {
@@ -33,12 +39,4 @@ fn write_user(user: User) {
     println!("Username: {}", user.username);
     println!("Email: {}", user.email);
     println!("Sign In: {}", user.sign_in_count);
-}
-
-fn convert_from_u32_nightly(input: u32) -> i32 {
-    if let Ok(response) = i32::try_from(input) {
-        return response;
-    } else {
-        return 0;
-    };
 }
